@@ -1,24 +1,35 @@
-const newUl = document.querySelectorAll('.app ol li')
+const newOl = document.querySelectorAll('.app ol li')
+
 function lineThru(event){
 event.target.style.textDecoration = 'line-through'
 }
-function eventListenerLoop () {
+function olEventListenerLoop () {
+   for (let i=0;i<newOl.length;i++) {
+   newOl[i].addEventListener('click',lineThru);
+}
+}
+olEventListenerLoop()
+
+const newUl = document.querySelectorAll('ul li')
+
+function invisible(event){
+event.target.style.opacity = '0'
+}
+function ulEventListenerLoop () {
    for (let i=0;i<newUl.length;i++) {
-   newUl[i].addEventListener('click',lineThru);
+   newUl[i].addEventListener('click',invisible);
 }
 }
-eventListenerLoop()
+ulEventListenerLoop()
 
 
 
+// const thirdUlLis = document.querySelectorAll('#thirdUl li');
 
-
-const thirdUlLis = document.querySelectorAll('#thirdUl li');
-
-function makesInvisible(event){
-    event.target.style.display = 'none';
-}
-document.querySelector('ul').addEventListener('click', makesInvisible)
+// function makesInvisible(event){
+//     event.target.style.display = 'none';
+// }
+// document.querySelector('ul').addEventListener('click', makesInvisible)
 // document.querySelector('#hide-me-area').style.display = 'none'
 // for (let i = 0; i < firstUlLis.length; i++) {
 //   firstUlLis[i].innerText = `${firstUlLis[i].innerText} ${i + 1}`;
