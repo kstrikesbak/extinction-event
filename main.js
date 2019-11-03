@@ -22,6 +22,20 @@ function ulEventListenerLoop () {
 }
 ulEventListenerLoop()
 
+const shrink = document.querySelectorAll('#row img')
+
+function shrinking(event){
+    event.target.style.width = '0'
+    }
+
+function shrinkingEventListenerLoop () {
+    for (let i=0;i<shrink.length;i++) {
+    shrink[i].addEventListener('click',shrinking);
+    }
+    }
+shrinkingEventListenerLoop()
+
+
 
 
 // const thirdUlLis = document.querySelectorAll('#thirdUl li');
