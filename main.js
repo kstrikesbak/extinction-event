@@ -4,8 +4,8 @@ function lineThru(event){
 event.target.style.textDecoration = 'line-through'
 }
 function olEventListenerLoop () {
-   for (let i=0;i<newOl.length;i++) {
-   newOl[i].addEventListener('click',lineThru);
+    for (let i=0;i<newOl.length;i++) {
+    newOl[i].addEventListener('click',lineThru);
 }
 }
 olEventListenerLoop()
@@ -16,8 +16,8 @@ function invisible(event){
 event.target.style.opacity = '0'
 }
 function ulEventListenerLoop () {
-   for (let i=0;i<newUl.length;i++) {
-   newUl[i].addEventListener('click',invisible);
+    for (let i=0;i<newUl.length;i++) {
+    newUl[i].addEventListener('click',invisible);
 }
 }
 ulEventListenerLoop()
@@ -32,8 +32,29 @@ function shrinkingEventListenerLoop () {
     for (let i=0;i<shrink.length;i++) {
     shrink[i].addEventListener('click',shrinking);
     }
-    }
+}
 shrinkingEventListenerLoop()
+
+const toggleButton = document.querySelector('#toggle')
+toggleButton.addEventListener('click',everyTogether)
+
+function everyTogether () {
+    for (let i=0;i<newOl.length;i++) {
+        newOl[i].style.textDecoration = 'line-through'
+    }
+    for (let i=0;i<newUl.length;i++) {
+        newUl[i].style.opacity = '0'
+    }
+    for (let i=0;i<shrink.length;i++) {
+        shrink[i].style.width = '0'
+        }
+}
+
+// function everyTogetherEventListenerLoop () {
+//     for (let i=0;i<toggleButton.length;i++) {
+//         toggleButton[i].addEventListener('click',everyTogether);
+//     }
+// }
 
 
 
